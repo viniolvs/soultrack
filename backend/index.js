@@ -1,3 +1,5 @@
+import { PrismaClient } from "@prisma/client";
+
 const express = require("express");
 const path = require("path");
 

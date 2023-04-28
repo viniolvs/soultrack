@@ -7,7 +7,6 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div>
-
         <a href="/"> <img className="logo" src="https://i.imgur.com/YpOLmro.png" /> </a>
       </div>
       <ul className="navlinks">
