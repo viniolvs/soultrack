@@ -2,9 +2,7 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-console.log(
-  app.use("/", express.static(path.join(__dirname, "./../frontend/public")))
-);
+app.use("/", express.static(path.join(__dirname, "./../frontend")))
 
 const PORT = 3000;
 
