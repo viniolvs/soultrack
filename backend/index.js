@@ -1,14 +1,21 @@
 import { PrismaClient } from "@prisma/client";
-
-const express = require("express");
-const path = require("path");
+import express from "express";
+import path from "path";
+import url from "url";
 
 const app = express();
-app.use("/", express.static(path.join(__dirname, "./../frontend")))
+const prisma = new PrismaClient();
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use("/", express.static(path.join(__dirname, "./../frontend")));
+
+app.get("/playlists", async (req, res) => {
+  const playlists = await prisma.playlist.findMany();
+  res.json(playlists);
+});
 
 const PORT = 3000;
-
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`  App running in port ${PORT}`);
   console.log(`  > Local: http://localhost:${PORT}/`);
 });
