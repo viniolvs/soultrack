@@ -5,9 +5,11 @@ const prisma = new PrismaClient();
 async function main() {
   const playlist = await prisma.playlist.create({
     data: {
-      name: "Teste",
-      description: "Testando",
-      author: "Vinicius",
+      name: "ANIMACAO DO TAVA",
+      description: "feliz do gustavo",
+      author: "Orlandini",
+      tag: "feliz",
+      src: "https://open.spotify.com/embed/playlist/4IuAswMJUgkNTRB81JlZVH?utm_source=generator&theme=0",
     },
   });
 }

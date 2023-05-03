@@ -15,6 +15,8 @@ model Playlist {
   name        String
   description String
   author      String
+  tag         String
+  src         String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

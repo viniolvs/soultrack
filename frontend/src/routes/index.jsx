@@ -5,9 +5,9 @@ import Navbar from "../components/navbar";
 import Feliz from "../pages/feelings/feliz";
 import Triste from "../pages/feelings/triste";
 import Puto from "../pages/feelings/puto";
+import Playlists from "../pages/playlists";
 
 export default function AppRoutes() {
-
   return (
     <BrowserRouter>
       <Navbar />
@@ -17,8 +17,8 @@ export default function AppRoutes() {
         <Route path="/pages/feelings/feliz.jsx" element={<Feliz />} />
         <Route path="/pages/feelings/triste.jsx" element={<Triste />} />
         <Route path="/pages/feelings/puto.jsx" element={<Puto />} />
+        <Route path="/pages/playlists/index.jsx" element={<Playlists />} />
       </Routes>
     </BrowserRouter>
-
-  )
-} 
+  );
+}
