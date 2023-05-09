@@ -6,7 +6,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tsx index.ts"
+    "dev": "ts-node-esm index.ts",
+    "start": "ts-node-esm index.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,9 +21,10 @@
   },
   "devDependencies": {
     "@tsconfig/node-lts-strictest-esm": "^18.12.1",
-    "@types/node": "^18.16.4",
+    "@types/node": "^18.16.6",
     "prisma": "^4.13.0",
     "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
     "tsx": "^3.12.7",
     "typescript": "^5.0.4"
   }
