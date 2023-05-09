@@ -42,6 +42,19 @@ function Botao() {
           About
         </Button>
       </Link>
+
+      <Link to="/pages/admin/index.jsx">
+        <Button
+          variant="contained"
+          sx={{
+            bgcolor: "var(--cor2)",
+            color: "black",
+            "&:hover": { backgroundColor: "var(--cor2h)" },
+          }}
+        >
+          Admin
+        </Button>
+      </Link>
     </div>
   );
 }
