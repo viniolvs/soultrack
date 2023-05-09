@@ -6,6 +6,7 @@ import Feliz from "../pages/feelings/feliz";
 import Triste from "../pages/feelings/triste";
 import Puto from "../pages/feelings/puto";
 import Playlists from "../pages/playlists";
+import Admin from "../pages/admin";
 
 export default function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ export default function AppRoutes() {
         <Route path="/pages/feelings/triste.jsx" element={<Triste />} />
         <Route path="/pages/feelings/puto.jsx" element={<Puto />} />
         <Route path="/pages/playlists/index.jsx" element={<Playlists />} />
+        <Route path="/pages/admin/index.jsx" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );
