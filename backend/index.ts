@@ -1,3 +1,4 @@
+//USING NODE 16.20.0 TO RUN
 import { PrismaClient } from "@prisma/client";
 import express from "express";
 import path from "path";
