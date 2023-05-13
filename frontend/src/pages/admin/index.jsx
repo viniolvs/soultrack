@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-import PlaylistForm from "./PlaylistForm";
+import AddPlaylist from "./AddPlaylist";
+import DelPlaylists from "./DelPlaylists";
 
 class Admin extends Component {
   render() {
     return (
       <>
-        <h1>Add Playlist</h1>
-        <PlaylistForm />
+        <h1>Admin</h1>
+        <h2>Add Playlist</h2>
+        <AddPlaylist />
+        <h2>Delete Playlist</h2>
+        <DelPlaylists />
       </>
     );
   }
