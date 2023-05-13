@@ -7,11 +7,6 @@ class Playlists extends Component {
     playlists: [],
   };
   componentDidMount() {
-    // fetch("http://localhost:3000/playlists")
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     this.setState({ playlists: data });
-    //   });
     axios.get("http://localhost:3000/playlists").then((response) => {
       this.setState({ playlists: response.data });
     });
