@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 class AddPlaylist extends Component {
   constructor(props) {
@@ -7,6 +6,11 @@ class AddPlaylist extends Component {
     this.state = { name: "", description: "", author: "", tag: "", src: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+
+  }
+  handleAdd(playlist) {
+    this.props.addPlaylist(playlist)
   }
   handleChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value });
@@ -21,13 +25,7 @@ class AddPlaylist extends Component {
       tag: this.state.tag,
       src: this.state.src
     }
-    axios.post("http://localhost:3000/addPlaylist", playlist)
-      .then(function(response) {
-        console.log(response.data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    this.handleAdd(playlist)
   }
   render() {
     return (
