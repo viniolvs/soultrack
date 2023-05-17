@@ -18,6 +18,20 @@ app.use(bodyParser.json());
 app.use("/", express.static(path.join(__dirname, "./../frontend")));
 app.use(cors());
 
+app.get("/tags", async (req, res) => {
+  // return all distinct tags from all playlists
+  const playlists = await prisma.playlist.findMany({
+    select: {
+      tag: true
+    },
+    distinct: ['tag']
+  });
+  const tags = playlists.map((playlist) => {
+    return playlist.tag
+  })
+  res.json(tags)
+})
+
 app.get("/playlists", async (req, res) => {
   const playlists = await prisma.playlist.findMany();
   res.json(playlists);
