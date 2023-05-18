@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Box } from "@mui/material";
+import { Container } from "@mui/material";
 import Tags from "./tags.jsx"
 
 class Home extends Component {
