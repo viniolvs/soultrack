@@ -29,6 +29,17 @@ app.get("/tags", async (req, res) => {
   res.json(tags)
 })
 
+// returns all playlists with a given tag
+app.get("/tags/:tag", async (req, res) => {
+  const tag: string = req.params.tag
+  const playlists = await prisma.playlist.findMany({
+    where: {
+      tag,
+    }
+  })
+  res.json(playlists)
+})
+
 app.get("/playlists", async (req, res) => {
   const playlists = await prisma.playlist.findMany();
   res.json(playlists);
