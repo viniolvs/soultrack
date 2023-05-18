@@ -17,7 +17,7 @@ function Botao() {
         </Button>
       </Link>
 
-      <Link to="/pages/playlists/index.jsx">
+      <Link to="/playlists">
         <Button
           variant="contained"
           sx={{
@@ -30,7 +30,7 @@ function Botao() {
         </Button>
       </Link>
 
-      <Link to="/pages/about/index.jsx">
+      <Link to="/about">
         <Button
           variant="contained"
           sx={{
@@ -43,7 +43,7 @@ function Botao() {
         </Button>
       </Link>
 
-      <Link to="/pages/admin/index.jsx">
+      <Link to="/admin">
         <Button
           variant="contained"
           sx={{

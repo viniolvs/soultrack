@@ -1,12 +1,10 @@
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../pages/home";
 import About from "../pages/about";
 import Navbar from "../components/navbar";
-import Feliz from "../pages/feelings/feliz";
-import Triste from "../pages/feelings/triste";
-import Puto from "../pages/feelings/puto";
 import Playlists from "../pages/playlists";
 import Admin from "../pages/admin";
+import Tag from "../pages/tag/index.jsx"
 
 export default function AppRoutes() {
   return (
@@ -14,12 +12,10 @@ export default function AppRoutes() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pages/about/index.jsx" element={<About />} />
-        <Route path="/pages/feelings/feliz.jsx" element={<Feliz />} />
-        <Route path="/pages/feelings/triste.jsx" element={<Triste />} />
-        <Route path="/pages/feelings/puto.jsx" element={<Puto />} />
-        <Route path="/pages/playlists/index.jsx" element={<Playlists />} />
-        <Route path="/pages/admin/index.jsx" element={<Admin />} />
+        <Route path="/about" element={<About />} />
+        <Route exact path="/tags/:tag" element={<Tag />} />
+        <Route path="/playlists" element={<Playlists />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );
