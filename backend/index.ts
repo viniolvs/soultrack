@@ -59,7 +59,7 @@ app.post("/addPlaylist", async (req, res) => {
       src,
     },
   })
-  res.json(playlist)
+  res.json(result)
 })
 
 app.delete("/playlists/:id", async (req, res) => {

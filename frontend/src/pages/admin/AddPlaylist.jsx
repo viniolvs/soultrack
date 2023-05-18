@@ -47,6 +47,7 @@ class AddPlaylist extends Component {
           cols="10"
           value={this.state.description}
           onChange={this.handleChange}
+          required
         ></textarea>
         <label htmlFor="author">Author:</label>
         <input

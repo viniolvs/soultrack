@@ -9,6 +9,7 @@ class Admin extends Component {
     this.state = { playlists: [] }
     this.addPlaylist = this.addPlaylist.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.update = this.update.bind(this)
   }
   componentDidMount() {
     axios.get("http://localhost:3000/playlists").then((response) => {
@@ -29,17 +30,22 @@ class Admin extends Component {
     this.setState({ playlists: updatedPlaylists })
   }
 
-  addPlaylist(playlist) {
-    axios.post("http://localhost:3000/addPlaylist", playlist)
+  update(db_response) {
+    let updatedPlaylists = this.state.playlists;
+    updatedPlaylists.push(db_response);
+    this.setState({ playlists: updatedPlaylists });
+  }
+
+  async addPlaylist(playlist) {
+    let db_response;
+    await axios.post("http://localhost:3000/addPlaylist", playlist)
       .then(function(response) {
-        console.log(response.data);
+        db_response = response.data
       })
       .catch(function(error) {
         console.log(error);
       });
-    axios.get("http://localhost:3000/playlists").then((response) => {
-      this.setState({ playlists: response.data });
-    });
+    this.update(db_response)
   }
   render() {
     return (
@@ -50,8 +56,8 @@ class Admin extends Component {
         <h2>Delete Playlist</h2>
         <div>
           <h2>Playlists</h2>
-          {this.state.playlists.map((playlist) => (
-            <div key={playlist.id}>
+          {this.state.playlists.map((playlist, index) => (
+            <div key={index}>
               <Playlist src={playlist.src} />
               <button onClick={() => this.handleDelete(playlist.id)}>Delete</button>
             </div>
